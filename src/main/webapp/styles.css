@@ -1,0 +1,39 @@
+/* 
+   This file provides the styles for the Team 5 Webapp.  Styles apply to both
+   the index.html and no-results.html files.
+*/
+
+body {
+    width: 90%;
+    margin: auto;
+}
+
+/* Styles everything in the header for site */
+header {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+#header-title, nav, #search {
+    display: flex;
+}
+
+#header-title {
+    flex: 1;
+}
+
+nav {
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+/* Styles the search bar */
+#search {
+    flex: 2;
+}
+
+input {
+    width: 45%;
+}
