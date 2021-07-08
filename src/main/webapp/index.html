@@ -1,14 +1,56 @@
+<!-- 
+    This is the index.html file for the Team 5 Project.  It provides the 
+     structure of the landing page
+-->
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>SPS Team 5 project</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tech Questions!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 
-<body>
-    <h1>SPS Team 5 project. </h1>
+<body onLoad="simpleAnswers()">
+    <header>
+        <h2 id="header-title">Tech Answers</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+        </nav>
+        <div id="search">
+            <input id="search-bar" type="text" placeholder="Type a question to search for!">
+            <button id="search-btn" onclick="search()">Search</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h1>Simple Answers to Questions About Technology</h1>
+
+            <Template id='simpleAnswers'>
+                <a href="#" >
+                    <div id='simpleAnswersOptions'>
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                </a>
+            </Template>
+
+            <h2>Ask</h2>
+        </section>
+        <section>
+            <h2>Popular Questions</h2>
+        </section>
+        <aside>
+            <h3>Topics</h3>
+            <ul>
+                <li>iPhone</li>
+                <li>Android</li>
+            </ul>
+        </aside>
+    </main>
 </body>
 
 </html>

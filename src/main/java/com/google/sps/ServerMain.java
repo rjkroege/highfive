@@ -8,6 +8,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.eclipse.jetty.webapp.WebInfConfiguration;
+import org.springframework.boot.SpringApplication;
 
 /**
  * Starts up the server, including a DefaultServlet that handles static files, and any servlet
@@ -16,6 +17,8 @@ import org.eclipse.jetty.webapp.WebInfConfiguration;
 public class ServerMain {
 
   public static void main(String[] args) throws Exception {
+
+	// SpringApplication.run(ServerMain.class, args);
 
     // Create a server that listens on port 8080.
     Server server = new Server(8080);
