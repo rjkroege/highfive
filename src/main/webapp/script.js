@@ -4,10 +4,6 @@ function search(term) {
     window.location.href = "no-results.html";
 }
 
-function askScreen() {
-    window.location.href = "askQuestions.html";
-}
-
 // Adds user's question to database
 async function askQuestions() {
     // TODO: add question to database
