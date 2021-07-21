@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Submit New Question</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <h3 id="header-title">Tech Answers Home</h3>
+            </a>
+            <a href="search.html">Find Answers!</a>
+        </nav>
+    </header>
+    <main>
+        <div id="askContainer">
+            <h1 id="askContainerTitle">Submit a Question</h1>
+            <!-- <p>We are so sorry to hear you didn'd find the answers you need!</p> -->
+            <p>Please submit your question bellow, and we'll notify you when an answer becomes available.</p>
+            <div id="emailContainer">
+                <p>Email address:</p>
+                <input id="email" type="text" placeholder="email@example.com">
+            </div>
+            <div id="deviceContainer">
+                <label for="cars">Device Type:</label>
+                <select name="device_type" id="device_type">
+                    <option value="iPhone">iPhone</option>
+                    <option value="android">Android</option>
+                </select>
+            </div>
+            <div id="questionContainer">
+                <p>Question:</p>
+                <textarea rows=10 cols=100 id='question'></textarea>
+            </div>
+            <button oncLick="askQuestions()">Submit</button>
+        </div>
+    </main>
+</body>
+
+</html>
