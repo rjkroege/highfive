@@ -70,3 +70,12 @@ input, textarea, select {
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 }
+
+#faqTemplate {
+    background-color: black;
+    width: 100%;
+}
+
+#faqQuestionSection {
+    display:flex; 
+}
