@@ -26,15 +26,15 @@ async function faqTemplateData() {
     question = temp.content.querySelector('h3'); 
     device_Type = temp.content.querySelector('p');
 
-    console.log(data); 
-
     for (i = 0; i < data.length; i++) {
         a = document.importNode(question, true);
         a.textContent += 'Question: ' + data[i].QUESTION;
-        document.body.appendChild(a);
+        document.getElementById("faqQuestionSection").appendChild(a)
 
         a = document.importNode(device_Type, true);
         a.textContent += 'Question: ' + data[i].DEVICE_TYPE;
-        document.body.appendChild(a);
+        document.getElementById("faqQuestionSection").appendChild(a)
     }
+
+    document.getElementById("loader").style.display = "none"; 
 }
