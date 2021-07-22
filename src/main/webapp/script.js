@@ -32,7 +32,7 @@ async function faqTemplateData() {
         document.getElementById("faqQuestionSection").appendChild(a)
 
         a = document.importNode(device_Type, true);
-        a.textContent += 'Question: ' + data[i].DEVICE_TYPE;
+        a.textContent += 'Device type: ' + data[i].DEVICE_TYPE;
         document.getElementById("faqQuestionSection").appendChild(a)
     }
 
