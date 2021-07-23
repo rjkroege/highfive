@@ -1,7 +1,40 @@
 // Searches for a given search term.  If there are no results,
 // navigates to no-results.html
-function search(term) {
-    window.location.href = "no-results.html";
+async function search(term) {
+    var askedQuestion = document.getElementById("search-bar").value; 
+    var words = askedQuestion.split(" ");
+
+    var queryEnd = ""
+    
+    for(var i = 0; i < words.length; i++) {
+        queryEnd += "question LIKE )(" + words[i] + "()"; 
+
+        if(i < words.length - 1)
+        {
+            queryEnd += " OR "; 
+        }
+    }
+
+    console.log(queryEnd); 
+
+    const response = await fetch('/iphoneQuestions?end=' + queryEnd);
+
+    const data = await response.json();
+
+    var temp, item, a, i;
+    temp = document.getElementById('searchTemplate');
+    question = temp.content.querySelector('h3'); 
+    device_Type = temp.content.querySelector('p');
+
+    for (i = 0; i < data.length; i++) {
+        a = document.importNode(question, true);
+        a.textContent += 'Question: ' + data[i].QUESTION;
+        document.getElementById("searchSection").appendChild(a)
+
+        a = document.importNode(device_Type, true);
+        a.textContent += 'Device type: ' + data[i].DEVICE_TYPE;
+        document.getElementById("searchSection").appendChild(a)
+    }
 }
 
 // Adds user's question to database
