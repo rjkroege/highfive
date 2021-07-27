@@ -1,7 +1,34 @@
 // Searches for a given search term.  If there are no results,
 // navigates to no-results.html
-function search(term) {
-    window.location.href = "no-results.html";
+async function search(term) {
+    var askedQuestion = document.getElementById("search-bar").value;
+    var words = askedQuestion.split(" ");
+    var queryEnd = "";
+
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+
+    for (var i = 0; i < words.length; i++) {
+        queryEnd += "question LIKE )(" + words[i] + "()";
+
+        if (i < words.length - 1) {
+            queryEnd += " OR ";
+        }
+    }
+
+    const response = await fetch('/' + temp[1] + 'Questions?end=' + queryEnd);
+
+    const data = await response.json();
+
+    var temp, item, a, i;
+    temp = document.getElementById('searchTemplate');
+    question = temp.content.querySelector('a');
+
+    for (i = 0; i < data.length; i++) {
+        a = document.importNode(question, true);
+        a.textContent += 'Question: ' + data[i].QUESTION;
+        document.getElementById("searchSection").appendChild(a)
+    }
 }
 
 // Adds user's question to database
@@ -23,7 +50,7 @@ async function faqTemplateData() {
 
     var temp, item, a, i;
     temp = document.getElementById('faqTemplate');
-    question = temp.content.querySelector('h3'); 
+    question = temp.content.querySelector('h3');
     device_Type = temp.content.querySelector('p');
 
     for (i = 0; i < data.length; i++) {
@@ -36,5 +63,5 @@ async function faqTemplateData() {
         document.getElementById("faqQuestionSection").appendChild(a)
     }
 
-    document.getElementById("loader").style.display = "none"; 
+    document.getElementById("loader").style.display = "none";
 }

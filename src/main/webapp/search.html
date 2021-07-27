@@ -26,7 +26,7 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section id='searchSection'>
             <h1>Find The Answers You Want</h1>
             <ol>
                 <li>Select your device</li>
@@ -35,9 +35,17 @@
             </ol>
             <!-- Use libraries and servlets to browse through our database of questions to find answers to user's questions. Display field here with (A) device drop-down, (B) search field with "Enter your question here" as 'background' text to guide user, (C) "SEARCH" button.
     On click, button displays results WITHIN(!!!) same page (fetches from servlet) -->
-            <h3>... Or browse our</h3>
-            <a href="faq.html" class="button">Frequently Asked Questions</a>
+            <input id="search-bar" type="text" placeholder="Type a question to search for!">
+            <button id="search-btn" onclick="search()">Search</button>
+
+                <template id="searchTemplate">
+                    <div id="searchTemplateDiv">
+                       <a href="index.html"></a> 
+                    </div>
+                </template>
         </section>
+        <h3>... Or browse our</h3>
+        <a href="faq.html" class="button">Frequently Asked Questions</a>
     </main>
 </body>
 
