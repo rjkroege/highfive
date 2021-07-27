@@ -6,36 +6,67 @@
 body {
   width: 90%;
   margin: auto;
+  font-size: larger;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Styles everything in the header for site */
 header {
-  display: flex;
-  align-items: center;
-  width: 90%;
   margin: auto;
 }
 
-#header-title, nav, #search {
-  display: flex;
-}
-
-#header-title {
-  flex: 1;
-}
-
 nav {
-  flex: 1;
+  display: flex;
   justify-content: space-evenly;
 }
 
-/* Styles the search bar */
-#search {
-  flex: 2;
+#header-title, #find-answers, #welcome-msg, #about, #device-q {
+  text-align: center;
 }
 
-input {
-  width: 45%;
+.nav-links{
+  padding: 10px;
+}
+
+.nav-links:hover {
+  background-color: rgb(199, 193, 193);
+}
+
+/* The following style the menu buttons */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu-icon {
+  background-color: rgb(168, 168, 168);
+  width: 300px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#device-list {
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.device {
+  width: 300px;
+  height: 65px;
+  background-color: rgb(168, 168, 168);
+  text-align: center;
+  line-height: 65px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: grey;
 }
 
 #askContainer {
@@ -57,18 +88,6 @@ input {
 
 input, textarea, select {
   margin-left: 8px;
-}
-
-.button {
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
 }
 
 #faqTemplate {

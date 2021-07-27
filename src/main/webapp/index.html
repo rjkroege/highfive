@@ -1,5 +1,5 @@
-<!-- 
-    This is the index.html file for the Team 5 Project.  It provides the 
+<!--
+    This is the index.html file for the Team 5 Project.  It provides the
      structure of the landing page
 -->
 
@@ -8,6 +8,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Tech Questions!</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
@@ -16,26 +19,31 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">
-                <h3 id="header-title">Tech Answers Home</h3>
-            </a>
-            <a href="search.html">Find Answers!</a>
+            <h2 id="header-title">
+                <a class="nav-links" href="index.html">Tech Answers Home</a>
+            </h2>
+            <h2 id="find-answers">
+                <a class="nav-links" href="search.html">Find Answers!</a>
+            </h2>
         </nav>
     </header>
     <main>
         <section>
-            <h1>Welcome to Tech Answers!</h1>
-            <a href="search.html" class="button">Ask a Question</a>
-            <a href="faq.html" class="button">Frequently Asked Questions</a>
-            <!-- For the two below, we would use javascript to launch the request to go
-        directly to the "iphone" or "android" search automatically.-->
-            <a href="search.html?deviceType=iphone" class="button">Get iPhone help</a>
-            <a href="search.html?deviceType=android" class="button">Get Android help</a>
-
-            <h2>About TechAnswers</h2>
+            <h1 id="welcome-msg">Welcome to Tech Answers!</h1>
+            <div class="container">
+                <a href="search.html" class="menu-icon">Ask a Question</a>
+                <a href="faq.html" class="menu-icon">Frequently Asked Questions</a>
+                <!-- For the two below, we would use javascript to launch the request to go
+                    directly to the "iphone" or "android" search automatically.-->
+                <div class="menu-icon" id="device-list">
+                    <a class="device" href="search.html?deviceType=iphone">Get iPhone help</a>
+                    <a class="device" href="search.html?deviceType=android">Get Android help</a>
+                </div>
+            </div>
+            <h2 id="about">About TechAnswers</h2>
             <p>Welcome to the site that will help you
                 find answers to your tech questions!</p>
-            <h3> What if my devide isn't on this site? </h3>
+            <h3 id="device-q"> What if my device isn't on this site? </h3>
             <p>Currently we only support the devices in the drop-down menu, but check back soon for more! </p>
 
         </section>
