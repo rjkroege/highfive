@@ -20,9 +20,7 @@ public class iphoneQuestions extends HttpServlet {
         String replaceEnd = end.replace("(", "%"); 
         replaceEnd = replaceEnd.replace(")", "'"); 
 
-        System.out.print(replaceEnd);
-
-        String iphoneQuestionQuery = "SELECT question, question_ID, device_type FROM QUESTIONS WHERE "+ replaceEnd +" AND device_type = 'iPhone';";
+        String iphoneQuestionQuery = "SELECT question, question_ID, device_type FROM QUESTIONS WHERE ("+ replaceEnd +") AND device_type = 'iPhone';";
 
         try {
             response.setContentType("application/json;");

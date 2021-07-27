@@ -33,10 +33,12 @@
     On click, button displays results WITHIN(!!!) same page (fetches from servlet) -->
             <input id="search-bar" type="text" placeholder="Type a question to search for!">
             <button id="search-btn" onclick="search()">Search</button>
-            <template id="searchTemplate">
-                <h3></h3>
-                <p></p>
-            </template>
+
+                <template id="searchTemplate">
+                    <div id="searchTemplateDiv">
+                       <a href="index.html"></a> 
+                    </div>
+                </template>
         </section>
         <h3>... Or browse our</h3>
         <a href="faq.html" class="button">Frequently Asked Questions</a>

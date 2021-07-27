@@ -15,7 +15,12 @@ public class androidQuestions extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String androidQuestionQuery = "SELECT question, question_ID, device_type FROM QUESTIONS WHERE device_type = 'android';";
+        String end = request.getParameter("end");
+
+        String replaceEnd = end.replace("(", "%"); 
+        replaceEnd = replaceEnd.replace(")", "'"); 
+
+        String androidQuestionQuery = "SELECT question, question_ID, device_type FROM QUESTIONS WHERE ("+ replaceEnd +") AND device_type = 'android';";
 
         try {
             response.setContentType("application/json;");
