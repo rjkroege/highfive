@@ -8,6 +8,8 @@ body {
   margin: auto;
   font-size: larger;
   font-family: 'Roboto', sans-serif;
+  background-color: #e6efff;
+  text-align: center;
 }
 
 /* Styles everything in the header for site */
@@ -32,43 +34,7 @@ nav {
   background-color: rgb(199, 193, 193);
 }
 
-/* The following style the menu buttons */
-.container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.menu-icon {
-  background-color: rgb(168, 168, 168);
-  width: 300px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#device-list {
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: white;
-}
-
-.device {
-  width: 300px;
-  height: 65px;
-  background-color: rgb(168, 168, 168);
-  text-align: center;
-  line-height: 65px;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: grey;
-}
-
+/* Used for askQuestions.html styling*/
 #askContainer {
   display: block;
   width: 100%;
@@ -90,6 +56,7 @@ input, textarea, select {
   margin-left: 8px;
 }
 
+/* for faq.html elements */
 #faqTemplate {
     background-color: black;
     width: 100%;
@@ -106,7 +73,53 @@ input, textarea, select {
   animation: spin 2s linear infinite;
 }
 
+/* for search.html elements */
 #searchTemplate {
     display: block;
     text-align: center;
+}
+
+/* Styles the buttons for index homepage, faq, and search pages*/
+a {
+  text-decoration: none;
+}
+
+a:hover, a:active {
+    background-color: #4591FF;
+    font-weight: bold;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+   border: 1px;
+   padding-bottom: 0px;
+   padding-top: 15px;
+}
+
+.additionalInfo {
+    width: 100%;
+    float: left;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    border: 1px;
+}
+.buttonOptions {
+    width: 100%;
+    float: left;
+    padding: 15px;
+    border: 1px;
+}
+ .optionLinks {
+    background-color: #93BFFF; /*light blue button background*/
+    color: #004DBD; /*white text*/
+    padding: 25px 24px; /*padding around text*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #004DBD; /*deep blue outline*/
+    cursor: pointer; /*pointer mouse icon*/
 }
