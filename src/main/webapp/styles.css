@@ -6,20 +6,27 @@
 body {
   width: 90%;
   margin: auto;
-  font-size: larger;
-  font-family: 'Roboto', sans-serif;
-  background-color: #e6efff;
+  
+  background-color: #e0e9ff;
   text-align: center;
+  
+  font-family: 'Vollkorn', Georgia, Times, serif;
 }
 
-/* Styles everything in the header for site */
+/* Styles everything in the nav bar for site */
 header {
   margin: auto;
 }
 
 nav {
-  display: flex;
-  justify-content: space-evenly;
+    margin: 0 0 0 0;
+    width: 100%;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #002bab;
+    color: white;
 }
 
 #header-title, #find-answers, #welcome-msg, #about, #device-q {
@@ -27,11 +34,13 @@ nav {
 }
 
 .nav-links{
-  padding: 10px;
+  padding: 25px;
+  color: white;
 }
 
 .nav-links:hover {
-  background-color: rgb(199, 193, 193);
+  background-color: #93BFFF;
+  color: white;
 }
 
 /* Used for askQuestions.html styling*/
@@ -91,9 +100,9 @@ a {
 }
 
 a:hover, a:active {
-    background-color: #4591FF;
+    background-color: #e3eaff;
     font-weight: bold;
-    color: white;
+    color: #002bab;
 }
 
 * {
@@ -104,6 +113,7 @@ a:hover, a:active {
    border: 1px;
    padding-bottom: 0px;
    padding-top: 15px;
+   color: #002bab;
 }
 
 .additionalInfo {
@@ -120,12 +130,31 @@ a:hover, a:active {
     border: 1px;
 }
  .optionLinks {
-    background-color: #93BFFF; /*light blue button background*/
-    color: #004DBD; /*white text*/
+    background-color: #99b5ff; /*light blue button background*/
+    color: #002bab; /*deep blue text*/
+    font-size: 105%;
     padding: 25px 24px; /*padding around text*/
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border: 1px solid #004DBD; /*deep blue outline*/
+    border: 2px solid #002bab; /*deep blue outline*/
     cursor: pointer; /*pointer mouse icon*/
+}
+
+/*styles the page fonts for headers and text*/
+h1 {
+ font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+ font-size: 50px;
+ line-height: 65px;
+}
+
+h2,h3 {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    color: #002bab;
+}
+
+p {
+ font-family: 'Vollkorn', Georgia, Times, serif;
+ font-size: 16px;
+ line-height: 25px;
 }
