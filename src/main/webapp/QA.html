@@ -15,7 +15,7 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="faqTemplateData()">
+<body onload="QAdata()">
     <header>
         <nav>
             <h2 id="header-title">
@@ -27,20 +27,21 @@
         </nav>
     </header>
     <main>
-        <h1>Frequently Asked Questions</h1>
-        <section id="faqQuestionSection">
+        <h1>Questions and answer</h1>
+        <section id="QASection">
             <div id="loader"></div>
+            <h2 id="question"></h2>
+            <h3 id="device_type"></h3>
             <!-- This section is where we can insert the top 10 FAQ from the database and use javascript for it.-->
-            <template id="faqTemplate">
-                <a href=""></a> 
+            <template id="QATemplate">
+                <p></p>
             </template>
         </section>
-        <h4>Ready to go back?</h4>
-        <a href="index.html" class="optionLinks">Homepage</a>
-        <h4>Not what you needed?</h4>
-        <a href="search.html?deviceType=all" class="optionLinks">Find Answers</a>
-        <p><strong>What if my device isn't on your site?</strong></p>
-        <p>Check back later, or <a href="askQuestions.html">submit a question</a>.</p>
+        <div id="questionContainer">
+            <p>Answer:</p>
+            <textarea rows=10 cols=100 id="answer"></textarea>
+            <button onclick="submitAnswer()">Submit answer</button>
+        </div>
     </main>
 </body>
 

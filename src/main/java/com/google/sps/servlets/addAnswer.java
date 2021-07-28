@@ -7,23 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.sps.servlets.queryExecuter;
+import com.google.sps.servlets.connection;
 
 @WebServlet("/addAnswer")
 public class addAnswer extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String question_ID = request.getParameter("question_ID");
         String answer = request.getParameter("answer");
 
-        String addAnswerQuery = "INSERT INTO ANSWER (question_ID, answer) VALUES (" + question_ID + ", '" + answer
+        String addAnswerQuery = "INSERT INTO ANSWERS (question_ID, answer) VALUES (" + question_ID + ", '" + answer
                 + "');";
 
         try {
-            response.setContentType("application/json;");
-            response.getWriter().println(queryExecuter.execute(addAnswerQuery));
+
+            connection.conn().createStatement().executeUpdate(addAnswerQuery);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

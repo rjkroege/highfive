@@ -47,7 +47,7 @@ nav {
   text-align: center;
 }
 
-#emailContainer, #deviceContainer, #questionContainer {
+#emailContainer, #deviceContainer, #questionContainer{
   padding: 4px;
   display: flex;
 }
