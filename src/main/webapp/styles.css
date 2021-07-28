@@ -81,7 +81,7 @@ a:hover {
   text-align: center;
 }
 
-#emailContainer, #deviceContainer, #questionContainer {
+#emailContainer, #deviceContainer, #questionContainer{
   padding: 4px;
   display: flex;
 }
@@ -104,6 +104,11 @@ input, textarea, select {
   border-top: 16px solid #3498db;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 #searchTemplate {

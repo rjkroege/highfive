@@ -27,6 +27,7 @@ async function search(term) {
     for (i = 0; i < data.length; i++) {
         a = document.importNode(question, true);
         a.textContent += 'Question: ' + data[i].QUESTION;
+        a.setAttribute('href', "QA.html?" + data[i].QUESTION_ID);
         document.getElementById("searchSection").appendChild(a)
     }
 }
@@ -61,6 +62,32 @@ async function faqTemplateData() {
         a = document.importNode(device_Type, true);
         a.textContent += 'Device type: ' + data[i].DEVICE_TYPE;
         document.getElementById("faqQuestionSection").appendChild(a)
+    }
+
+    document.getElementById("loader").style.display = "none";
+}
+
+async function QAdata() {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+
+    console.log(temp[0]); 
+
+    const response = await fetch('/questionAndAnswer?question_ID=' + temp[0]);
+
+    const data = await response.json();
+
+    document.getElementById('question').innerText = data[0].DATA; 
+    document.getElementById('device_type').innerText = data[1].DATA;
+
+    var temp, item, a, i;
+    temp = document.getElementById('QATemplate');
+    question = temp.content.querySelector('p');
+
+    for (i = 2; i < data.length; i++) {
+        a = document.importNode(question, true);
+        a.textContent += data[i].DATA;
+        document.getElementById("QASection").appendChild(a)
     }
 
     document.getElementById("loader").style.display = "none";
