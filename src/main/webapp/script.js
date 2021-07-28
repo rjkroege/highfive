@@ -71,13 +71,13 @@ async function QAdata() {
     var parameters = location.search.substring(1).split("&");
     var temp = parameters[0].split("=");
 
-    console.log(temp[0]); 
+    console.log(temp[0]);
 
     const response = await fetch('/questionAndAnswer?question_ID=' + temp[0]);
 
     const data = await response.json();
 
-    document.getElementById('question').innerText = data[0].DATA; 
+    document.getElementById('question').innerText = data[0].DATA;
     document.getElementById('device_type').innerText = data[1].DATA;
 
     var temp, item, a, i;
@@ -91,4 +91,18 @@ async function QAdata() {
     }
 
     document.getElementById("loader").style.display = "none";
+}
+
+async function submitAnswer() {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+
+    console.log(temp[0]);
+
+    var answer = document.getElementById("answer").value
+
+    await fetch('/addAnswer?question_ID=' + temp[0]
+        + '&answer=' + answer);
+
+    location.reload();
 }
