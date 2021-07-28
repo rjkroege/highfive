@@ -51,17 +51,17 @@ async function faqTemplateData() {
 
     var temp, item, a, i;
     temp = document.getElementById('faqTemplate');
-    question = temp.content.querySelector('h3');
-    device_Type = temp.content.querySelector('p');
+    question = temp.content.querySelector('a');
 
     for (i = 0; i < data.length; i++) {
         a = document.importNode(question, true);
-        a.textContent += 'Question: ' + data[i].QUESTION;
+        a.textContent += 'Question: ' + data[i].QUESTION + ' ' + data[i].DEVICE_TYPE;
+        a.setAttribute('href', "QA.html?" + data[i].QUESTION_ID);
         document.getElementById("faqQuestionSection").appendChild(a)
 
-        a = document.importNode(device_Type, true);
-        a.textContent += 'Device type: ' + data[i].DEVICE_TYPE;
-        document.getElementById("faqQuestionSection").appendChild(a)
+        // a = document.importNode(device_Type, true);
+        // a.textContent += 'Device type: ' + data[i].DEVICE_TYPE;
+        // document.getElementById("faqQuestionSection").appendChild(a)
     }
 
     document.getElementById("loader").style.display = "none";

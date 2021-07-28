@@ -29,23 +29,22 @@
     </header>
     <main>
         <section>
-            <h1 id="welcome-msg">Welcome to Tech Answers!</h1>
-            <div class="container">
-                <a href="search.html?deviceType=iphone" class="menu-icon">Ask a Question</a>
-                <a href="faq.html" class="menu-icon">Frequently Asked Questions</a>
+            <h1 id="welcome-msg" class="header"> Welcome to Tech Answers!</h1>
+            <div class="buttonOptions" style="width:100%">
+                <a href="search.html?deviceType=all" class="optionLinks" style="width:24%">Ask a Question</a>
+                <a href="faq.html" class="optionLinks" style="width:24%">Top Questions</a>
                 <!-- For the two below, we would use javascript to launch the request to go
                     directly to the "iphone" or "android" search automatically.-->
-                <div class="menu-icon" id="device-list">
-                    <a class="device" href="search.html?deviceType=iphone">Get iPhone help</a>
-                    <a class="device" href="search.html?deviceType=android">Get Android help</a>
-                </div>
+                <a class="optionLinks" href="search.html?deviceType=iphone" style="width:24%">iPhone Help</a>
+                <a class="optionLinks" href="search.html?deviceType=android" style="width:24%">Android Help</a>
             </div>
-            <h2 id="about">About TechAnswers</h2>
-            <p>Welcome to the site that will help you
-                find answers to your tech questions!</p>
-            <h3 id="device-q"> What if my device isn't on this site? </h3>
-            <p>Currently we only support the devices in the drop-down menu, but check back soon for more! </p>
-
+            <div class="additionalInfo">
+                <h2 id="about">About TechAnswers</h2>
+                <p>Welcome to the site that will help you
+                    find answers to your tech questions!</p>
+                <h3 id="device-q"> What if my device isn't on this site? </h3>
+                <p>Currently we only support the devices in the drop-down menu, but check back soon for more! </p>
+            </div>
         </section>
     </main>
 </body>
