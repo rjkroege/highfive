@@ -49,11 +49,6 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-#askContainerTitle {
-  text-align: center;
 }
 
 #emailContainer, #deviceContainer, #questionContainer{
@@ -91,7 +86,6 @@ input, textarea, select {
 /* for search.html elements */
 #searchTemplate {
     display: block;
-    text-align: center;
 }
 
 /* Styles the buttons for index homepage, faq, and search pages*/
@@ -134,7 +128,6 @@ a:hover, a:active {
     color: #002bab; /*deep blue text*/
     font-size: 105%;
     padding: 25px 24px; /*padding around text*/
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     border: 2px solid #002bab; /*deep blue outline*/
@@ -157,4 +150,43 @@ p {
  font-family: 'Vollkorn', Georgia, Times, serif;
  font-size: 16px;
  line-height: 25px;
+}
+
+/* The following style the questions that appear from server requests */
+hr {
+    width: 680px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 50%;
+}
+
+/* Styles the search bar and submit button in the search page */
+#search-bar, #search-btn {
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 2px;
+  padding: 10px;
+  margin: 10px;
+border: 2px solid rgb(93, 93, 206);
+}
+
+#search-bar {
+    width: 550px;
+}
+
+#search-btn {
+    background-color: rgb(124, 231, 110);
+}
+
+#search-btn:hover {
+    cursor: pointer;
+    background-color: rgb(108, 212, 95);
+}
+
+.hidden {
+    display: none;
 }

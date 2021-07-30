@@ -15,21 +15,11 @@ async function search(term) {
             queryEnd += " OR ";
         }
     }
-
+    document.getElementById("loader").classList.remove("hidden");    
     const response = await fetch('/' + temp[1] + 'Questions?end=' + queryEnd);
-
     const data = await response.json();
-
-    var temp, item, a, i;
-    temp = document.getElementById('searchTemplate');
-    question = temp.content.querySelector('a');
-
-    for (i = 0; i < data.length; i++) {
-        a = document.importNode(question, true);
-        a.textContent += 'Question: ' + data[i].QUESTION;
-        a.setAttribute('href', "QA.html?" + data[i].QUESTION_ID);
-        document.getElementById("searchSection").appendChild(a)
-    }
+    formatQuestions(data, "searchSection");
+        document.getElementById("loader").classList.add("hidden");
 }
 
 // Adds user's question to database
@@ -44,27 +34,37 @@ async function askQuestions() {
         + "&device_type=" + device_Type);
 }
 
+// Makes request for most frequently asked questions
 async function faqTemplateData() {
     const response = await fetch('/mostFrequentQuestion');
+    const data = await response.json();    
 
-    const data = await response.json();
-
-    var temp, item, a, i;
-    temp = document.getElementById('faqTemplate');
-    question = temp.content.querySelector('a');
-
-    for (i = 0; i < data.length; i++) {
-        a = document.importNode(question, true);
-        a.textContent += 'Question: ' + data[i].QUESTION + ' ' + data[i].DEVICE_TYPE;
-        a.setAttribute('href', "QA.html?" + data[i].QUESTION_ID);
-        document.getElementById("faqQuestionSection").appendChild(a)
-
-        // a = document.importNode(device_Type, true);
-        // a.textContent += 'Device type: ' + data[i].DEVICE_TYPE;
-        // document.getElementById("faqQuestionSection").appendChild(a)
-    }
-
+    formatQuestions(data, "faqQuestionSection");
     document.getElementById("loader").style.display = "none";
+}
+
+/**
+ * Formats the questions requested from the server
+ * @param {JSON} data - holds the questions that were requested from server 
+ * @param {String} sectionID - the location to put the questions
+ */
+function formatQuestions(data, sectionID) {
+    for (var i = 0; i < data.length; i++) {
+        let questionDiv = document.createElement("div");
+        let a = document.createElement("a");
+        let p = document.createElement("p");
+        let hr = document.createElement("hr");
+
+        a.textContent += "Question: " + data[i].QUESTION;
+        p.textContent = "Device Type: " + data[i].DEVICE_TYPE;
+        a.setAttribute('href', "QA.html?" + data[i].QUESTION_ID);
+
+        questionDiv.appendChild(a);
+        questionDiv.appendChild(p);
+        questionDiv.appendChild(hr);
+
+        document.getElementById(sectionID).appendChild(questionDiv);
+    }
 }
 
 async function QAdata() {
@@ -90,7 +90,7 @@ async function QAdata() {
         document.getElementById("QASection").appendChild(a)
     }
 
-    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader").classList.add("hidden");
 }
 
 async function submitAnswer() {
