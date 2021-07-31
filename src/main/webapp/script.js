@@ -56,8 +56,8 @@ function formatQuestions(data, sectionID) {
         let hr = document.createElement("hr");
 
         a.textContent += "Question: " + data[i].QUESTION;
-        p.textContent = "Device Type: " + data[i].DEVICE_TYPE;
         a.setAttribute('href', "QA.html?" + data[i].QUESTION_ID);
+        p.textContent = "Device Type: " + data[i].DEVICE_TYPE;
 
         questionDiv.appendChild(a);
         questionDiv.appendChild(p);

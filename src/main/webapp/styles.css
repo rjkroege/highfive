@@ -29,9 +29,9 @@ nav {
     color: white;
 }
 
-#header-title, #find-answers, #welcome-msg, #about, #device-q {
+/* #header-title, #find-answers, #welcome-msg, #about, #device-q {
   text-align: center;
-}
+} */
 
 .nav-links{
   padding: 25px;
@@ -45,10 +45,12 @@ nav {
 
 /* Used for askQuestions.html styling*/
 #askContainer {
+  font-size: 20px;
   display: block;
-  width: 100%;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  width: 55%;
 }
 
 #emailContainer, #deviceContainer, #questionContainer{
@@ -56,8 +58,21 @@ nav {
   display: flex;
 }
 
+#email {
+  border-radius: 5px;
+  padding: 2px;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(93, 93, 206);
+  font-size: 20px;
+}
+
+.prompt-msg {
+    font-size: 20px;
+}
+
 input, textarea, select {
-  margin-left: 8px;
+  margin-left: 10px;
 }
 
 /* for faq.html elements */
@@ -165,24 +180,31 @@ hr {
 }
 
 /* Styles the search bar and submit button in the search page */
-#search-bar, #search-btn {
+#search-bar, #search-btn, #submit-question, textarea, select {
   border-radius: 5px;
   font-size: 20px;
   padding: 2px;
   padding: 10px;
   margin: 10px;
-border: 2px solid rgb(93, 93, 206);
+  border: 2px solid rgb(93, 93, 206);
 }
 
-#search-bar {
+#search-bar, #submit-question {
     width: 550px;
 }
 
-#search-btn {
+#search-btn, #submit-question {
     background-color: rgb(124, 231, 110);
 }
 
-#search-btn:hover {
+#submit-question, select {
+    width: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+#search-btn:hover, #submit-question:hover {
     cursor: pointer;
     background-color: rgb(108, 212, 95);
 }
@@ -190,3 +212,4 @@ border: 2px solid rgb(93, 93, 206);
 .hidden {
     display: none;
 }
+

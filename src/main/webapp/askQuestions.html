@@ -22,27 +22,26 @@
         </nav>
     </header>
     <main>
-        <div id="askContainer">
-            <h1 id="askContainerTitle" class="header">Submit a Question</h1>
-            <!-- <p>We are so sorry to hear you didn'd find the answers you need!</p> -->
+        <section id="askContainer">
+            <h1 id="askContainerTitle" class="header">Ask a Question</h1>
             <p>Please submit your question bellow, and we'll notify you when an answer becomes available.</p>
             <div id="emailContainer">
-                <p>Email address:</p>
+                <p class="prompt-msg">Email address:</p>
                 <input id="email" type="text" placeholder="email@example.com">
             </div>
             <div id="deviceContainer">
-                <label for="cars">Device Type:</label>
+                <label for="device_type">Device Type:</label>
                 <select name="device_type" id="device_type">
                     <option value="iPhone">iPhone</option>
                     <option value="android">Android</option>
                 </select>
             </div>
             <div id="questionContainer">
-                <p>Question:</p>
-                <textarea rows=10 cols=100 id='question'></textarea>
+                <p class="prompt-msg">Question:</p>
+                <textarea rows=10 cols=90 id='question' placeholder="Type Question Here!"></textarea>
             </div>
-            <button oncLick="askQuestions()">Submit</button>
-        </div>
+            <button id="submit-question" oncLick="askQuestions()">Submit</button>
+        </section>
     </main>
 </body>
 
